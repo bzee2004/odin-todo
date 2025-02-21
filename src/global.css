@@ -1,0 +1,185 @@
+
+* {
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+h1 {
+    letter-spacing: 3px;
+}
+
+.home-page {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) 4fr;
+}
+
+.sidebar {
+    color: white;
+    padding-top: 10px;
+    background: rgb(19, 125, 224);
+    word-wrap: break-word;
+    word-break: break-all;
+    /* max-height: 100vh; */
+    overflow-y: scroll;
+}
+.sidebar h1 {
+    margin-left: 20px;
+}
+
+.title p, .project ul {
+    padding: 0;
+    margin: 0;
+}
+
+.project {
+    margin-block: 10px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+.project ul {
+    list-style: none;
+    padding-left: 60px;
+    font-size: 0.7rem;
+    color: lightgray;
+}
+.project ul li {
+    padding-block: 3px;
+}
+.project button {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    bottom: 0;
+    margin-block: auto;
+    height: 40%;
+}
+.remove-project {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.project:hover .remove-project {
+    opacity: 1;
+}
+
+#add-project {
+    width: 100%;
+    border: none;
+    background: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-block: 5px solid #045cae;
+}
+#add-project:hover {
+    background: lightgray;
+}
+
+.remove-project {
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.remove-project:hover {
+    background: lightgray;
+}
+
+.title {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+    padding-block: 10px;
+    padding-inline: 20px 0;
+}
+.title:hover {
+    background: rgb(7, 103, 193);
+}
+.title img {
+    max-width: 30px;
+    pointer-events: none;
+}
+.title p {
+    font-size: 1rem;
+    max-width: 80%;
+}
+
+dialog {
+    position: absolute;
+    top: 50px;
+}
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px;
+}
+
+.category-card {
+    background: lightgray;
+    padding: 30px 20px;
+}
+.add-category {
+    width: 400px;
+    height: 50px;
+    margin: -20px auto;
+}
+
+.todo-card {
+    position: relative;
+    padding: 10px;
+    background: white;
+    margin-block: 10px;
+}
+.todo-card p {
+    padding: 0;
+    margin: 0;
+}
+
+.todo-text-content {
+    width: 90%;
+}
+.todo-text-content:hover {
+    cursor: pointer;
+    color: rgb(6, 6, 206);
+}
+
+#todo-remove {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: none;
+    cursor: pointer;
+}
+#todo-remove:hover {
+    background: rgb(193, 193, 193);
+}
+
+
+.selected {
+    background: rgb(7, 103, 193);
+}
+
+#display-todo label {
+    text-decoration: underline;
+    font-weight: bold;
+}
+#display-todo {
+    width: 500px;
+    border: none;
+    padding: 50px 20px;
+}
